@@ -41,14 +41,15 @@
             <div class="content-right">
               <h1>आपका स्वागत है | WELCOME CITIZENS</h1>
               <ol>
-                
-                <li>जन सामान्य की शिकायतों को दर्ज करने और समस्याओ का निराकरण पाने का अभिनव प्रयास है। इस पर आप पायेगे:</li>
-                <li>पंचायत समिति एवं जिला स्तर पर राजस्थान सम्पर्क केन्द्रों पर निः शुल्क रूप से शिकायतों को दर्ज कराने
-                  <li> बिना कार्यालय में उपस्थित हुए समस्याओ को ऑनलाइन दर्ज करने की सुविधा।</li>
-                  की सुविधा।</li>
-              </ol>             
 
-             
+                <li>जन सामान्य की शिकायतों को दर्ज करने और समस्याओ का निराकरण पाने का अभिनव प्रयास है। इस पर आप पायेगे:
+                </li>
+                <li>पंचायत समिति एवं जिला स्तर पर राजस्थान सम्पर्क केन्द्रों पर निः शुल्क रूप से शिकायतों को दर्ज कराने
+                <li> बिना कार्यालय में उपस्थित हुए समस्याओ को ऑनलाइन दर्ज करने की सुविधा।</li>
+                की सुविधा।</li>
+              </ol>
+
+
 
             </div>
           </div>
@@ -60,12 +61,12 @@
         <div class="col-4">
           <div class="text-card">
             <p>शिकायत दर्ज करें</p>
-            <a href="#">CLECK HERE</a>
+            <a onclick="formregopen()">CLECK HERE</a>
           </div>
         </div>
         <div class="col-4">
           <div class="text-card">
-         
+
             <p>शिकायत की स्थिति देखें</p>
             <a href="#">CLICK HERE</a>
           </div>
@@ -73,19 +74,44 @@
         <div class="col-4">
           <div class="text-card">
             <p>शिकायत का पुनर्म्मरण</p>
-          <a href="#">CLECK HERE</a>
+            <a href="#">CLECK HERE</a>
           </div>
         </div>
       </div>
     </section>
   </main>
-  
-<footer>
-  
-</footer>
+
+
+
+  <div class="popwindow">
+    <div class="formwindowclose" id="formwindow">
+      <form method="get" action="complaintform.html" id="form">
+
+        <img src="img/icons.png" class="close-btn" onclick="formregclose()">
+        <h1>login</h1>
+        <label for="mobile_no">Mobile_no</label>
+        <input type="text" id="mobile_no" name="mobile_no" required>
+        
+        <label for="aadharcard_no">Aadhar card no</label>
+        <input type="aadharcard_no" id="aadharcard_no" name="aadharcard_no" required>
+        
+        
+        <!-- <label for="otp_verfiy">otp_verfiy</label>
+        <input type="otp_verfiy" id="otp_verfiy" name="otp_verfiy" required> -->
+        
+        
+        <button type="submit" onclick="otpgan()" class="next-btn"> Next</button>
+      </form>
+    </div>
+  </div>
+  <footer>
+
+  </footer>
+  <script src="js.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
     integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </body>
 
 </html>

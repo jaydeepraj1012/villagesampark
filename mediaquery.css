@@ -1,17 +1,32 @@
 @media only screen and (max-width: 768px) {
-    section>#About>.row>.col-5>.content-left>img {
- margin-left: 101px;
+
+    header>nav>.row>ul {
+        display: block;
+        /* justify-content: space-between; */
+      }
+      header>nav>.row>ul>li{
+        display: block;
+        /* justify-content: space-between; */
+        width: 90% !important;
+      }
+
+
+
+    section>#About>.row>.col-4>.content-left>img {
+        margin-left: 101px !important;
 
 
     }
-    section>#About>.row>.col-7{
+
+    section>#About>.row>.col-7 {
         width: 100% !important;
-        
+
     }
-.help>.row>.col-4{
-    padding: 20px;
-   width: 100% !important;
-   background-color: brown;
-  }
-  
+
+    .help>.row>.col-4 {
+        padding: 20px;
+        width: 100% !important;
+
+    }
+
 }

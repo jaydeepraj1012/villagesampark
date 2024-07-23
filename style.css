@@ -76,4 +76,64 @@ section>#About>.row>.col-7>.content-right {
 .help>.row>.col-4>.text-card>a {
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.popwindow>.formwindowclose{
+  display: none;
+}
+.popwindow>.formwindow{
+  display: block;
+}
+.popwindow>.formwindow>form{
+  background-color: #6eefa8;
+  width: 400px;
+  height: 350px;
+  position: absolute;
+  top: 35vh;
+right: 37vw;
+  background-color: #373d4b;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+}
+
+.popwindow>.formwindow>form>h1{
+  text-align: center;
+  color: #61dafb;
+}
+
+label {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.popwindow>.formwindow>form>input {
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #61dafb;
+  border-radius: 4px;
+  transition: border-color 0.3s ease-in-out;
+  outline: none;
+  color: #282c37;
+}
+.popwindow>.formwindow>form>.close-btn{
+width: 40px;
+height: 40px;
+padding: 10px;
+position: absolute;
+right: 10px;
+margin-bottom: 10px;
+cursor: pointer;
+}
+.popwindow>.formwindow>form>.next-btn{
+  background-color: #a0ef88;
+  color: #282c37;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
