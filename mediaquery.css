@@ -13,7 +13,7 @@
 
 
     section>#About>.row>.col-4>.content-left>img {
-        margin-left: 101px !important;
+        margin-left: 12% !important;
 
 
     }
@@ -28,5 +28,11 @@
         width: 100% !important;
 
     }
+    
+.popwindow>.formwindow>form{
+    top: 100vh;
+    right: 0;
+}
+
 
 }

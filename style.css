@@ -90,8 +90,8 @@ section>#About>.row>.col-7>.content-right {
   width: 400px;
   height: 350px;
   position: absolute;
-  top: 35vh;
-right: 37vw;
+  top: 35%;
+right: 37%;
   background-color: #373d4b;
   padding: 20px;
   border-radius: 8px;
