@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaquery.css">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* light gray background */
+    
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff; /* white background */
+    border: 1px solid #ddd; /* light gray border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+   
+    color: #000; /* white text */
+  }
+  
+  .header img {
+    width: 100px;
+    height: auto;
+    margin: 10px;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+    
+    color: #fff; /* white text */
+  }
+  .nav li{
+
+}
+.nav a {
+      background-color: #1577A2;
+    text-decoration: none;
+    color: #fff; /* white text */
+    width: 15%;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px; /* rounded corners */
+    transition: background-color 0.2s ease; /* hover effect */
+  }
+  
+  .nav a:hover {
+    background-color: #666; /* dark gray hover background */
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff; /* white background */
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .content-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f7f7f7; /* light gray background */
+    border: 1px solid #ddd; /* light gray border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  }
+  
+  .content-left img {
+    width: 400px;
+    height: 400px;
+    margin: 10px;
+  }
+  
+  .content-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff; /* white background */
+  }
+  
+  .content-right h1 {
+    text-align: center;
+    color: #333; /* dark gray text */
+  }
+  
+  .table {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    background-color: #f7f7f7; /* light gray background */
+    border: 1px solid #ddd; /* light gray border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  }
+  
+  .table-cell {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd; /* light gray border */
+    width: 30%;
+  }
+  
+  .button {
+    background-color: #4CAF50; /* green background */
+    border: none;
+    color: #fff; /* white text */
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; /* rounded corners */
+  }
+  
+  .button:hover {
+    background-color: #3e8e41; /* darker green hover background */
+  }
+  
+  .option {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 20px;
+
+  }
+  .cardContainer {
+      display: inline-block;
+      position: relative;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card {
+      position: relative;
+      height: 200px;
+      width: 400px;
+      background: #478CCF;
+          border-radius: 25px;
+    }
+        .card::after {
+      content: "";
+      width: 400px;
+      height: 250px;
+      margin-top: -300px;
+      border-radius: 30px;
+      overflow-x: hidden;
+      opacity: 0.5;
+   
+  }
+  .card .text-card  {
+    position: relative;
+text-align: center;
+margin: 54px 0px 88px 0px;
+
+  }
+
+.text-card  p{
+        color: #000;
+        font-size: larger;
+        font-weight: 200em;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+      }
+.text-card>a{
+  text-decoration: none;
+  color: rgb(198, 206, 198);
+}
+.text-card>a:hover {
+  text-decoration: none; 
+  filter: drop-shadow(3px #000);
+  font-size: 20px;
+}
+footer{
+  width: 100%;
+  height:200px;
+  background-color: #000;
+
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+  p{
+    color:greenyellow;
+    
+  }
+  a{
+  color: blue;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">      
+    <h1>VILLAGE SAMPARK</h1>
+     </div>
+
+  <div class="nav">
+ <a href="#">Home</a>
+    <a href="#">About Sampark</a>
+    <a href="#">Help</a>
+    <a href="#">Feedback</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact Us</a>
+  </div>
+
+  <div class="section">
+    <div class="content">
+      <div class="content-left">
+      <img src="img/bg,jpeg.jpeg" >
+      </div>
+      <div class="content-right">
+        <h1>आपका स्वागत है | WELCOME CITIZENS</h1>
+        <p>जन सामान्य की शिकायतों को दर्ज करने और समस्याओ का निराकरण पाने का अभिनव प्रयास है। इस पर आप पायेगे:</p>
+        <ul>
+          <li>बिना कार्यालय में उपस्थित हुए समस्याओ को ऑनलाइन दर्ज करने की सुविधा।</li>
+          <li>पंचायत समिति एवं जिला स्तर पर राजस्थान सम्पर्क केन्द्रों पर निः शुल्क रूप से शिकायतों को दर्ज कराने की सुविधा।</li>
+        
+        </ul>
+        
+      </div>
+    </div>
+
+    
+    <button class="button">For grievances related to Other States/Government of India Organizations, Click</button>
+  
+  </div>
+
+  <div class="option">
+  <div class="cardContainer">
+    
+      <div class="card">
+        <div class="text-card">
+          <p>शिकायत दर्ज करें</p>
+          <a href="#">CLECK HERE</a>
+        </div>
+      
+      </div>
+
+  </div>
+
+
+  <div class="cardContainer">
+   
+      <div class="card">
+        <div class="text-card">
+         
+          <p>शिकायत की स्थिति देखें</p>
+          <a href="#">CLICK HERE</a>
+        </div>
+   
+      </div>
+   
+  </div>
+
+
+  <div class="cardContainer">
+    
+      <div class="card">
+        <div class="text-card">
+          <p>शिकायत का पुनर्म्मरण</p>
+        <a href="#">CLECK HERE</a>
+        </div>
+   
+      </div>
+ 
+  </div>
+
+  </div>
+</div>
+<footer>
+  <div class="footerbox">
+    <p data-label-id="0" style="transition: none 0s ease 0s; cursor: move;">शिकायत दर्ज करें</p>
+
+  </div>
+</footer>
+</body>
+</html>
