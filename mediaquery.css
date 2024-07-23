@@ -1,8 +1,17 @@
 @media only screen and (max-width: 768px) {
-    header>nav>.row>ul>li {
-    width: 100%;
-    background-color: brown;
-}
+    section>#About>.row>.col-5>.content-left>img {
+ margin-left: 101px;
 
 
+    }
+    section>#About>.row>.col-7{
+        width: 100% !important;
+        
+    }
+.help>.row>.col-4{
+    padding: 20px;
+   width: 100% !important;
+   background-color: brown;
+  }
+  
 }
