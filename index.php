@@ -19,10 +19,10 @@
         <ul>
 
           <li><a href="#home">Home</a></li>
-          <li><a href="#Help">Help</a></li>
           <li><a href="#Feedback">Feedback</a></li>
           <li><a href="#Gallery">Gallery</a></li>
           <li><a href="#About">About</a></li>
+          <li><a href="admin\loginpage.php">Admin</a></li>
         </ul>
       </div>
     </nav>
@@ -61,14 +61,14 @@
         <div class="col-4">
           <div class="text-card">
             <p>शिकायत दर्ज करें</p>
-            <a onclick="formregopen()">CLECK HERE</a>
+            <a href="registrationpage.php">CLECK HERE</a>
           </div>
         </div>
         <div class="col-4">
           <div class="text-card">
 
             <p>शिकायत की स्थिति देखें</p>
-            <a href="#">CLICK HERE</a>
+            <a href="#" onclick="formregopen()">CLICK HERE</a>
           </div>
         </div>
         <div class="col-4">
@@ -85,22 +85,21 @@
 
   <div class="popwindow">
     <div class="formwindowclose" id="formwindow">
-      <form method="get" action="complaintform.html" id="form">
+      <form method="get" action="complaint_status.php" id="form">
 
         <img src="img/icons.png" class="close-btn" onclick="formregclose()">
         <h1>login</h1>
-        <label for="mobile_no">Mobile_no</label>
-        <input type="text" id="mobile_no" name="mobile_no" required>
+        <label for="complaint_no">complaint No</label>
+        <input type="text" id="complaint_no" name="complaint_no" required>
         
-        <label for="aadharcard_no">Aadhar card no</label>
-        <input type="aadharcard_no" id="aadharcard_no" name="aadharcard_no" required>
+    
+        <button class="next-btn"> Next</button>
         
         
         <!-- <label for="otp_verfiy">otp_verfiy</label>
         <input type="otp_verfiy" id="otp_verfiy" name="otp_verfiy" required> -->
         
         
-        <button type="submit" onclick="otpgan()" class="next-btn"> Next</button>
       </form>
     </div>
   </div>

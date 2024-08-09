@@ -28,6 +28,7 @@ header>nav>.row>ul>li {
   margin: 5px;
 }
 
+
 header>nav>.row>ul>li>a {
   text-decoration: none;
   color: #fff;
@@ -110,7 +111,7 @@ label {
   color: white;
 }
 
-.popwindow>.formwindow>form>input {
+.popwindow>#formwindow>form>input {
   padding: 10px;
   margin-bottom: 12px;
   border: 1px solid #61dafb;
@@ -136,4 +137,15 @@ cursor: pointer;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+}
+.popwindow>.statuswindowclose{
+  display: none;
+}
+.popwindow>.statuswindow{
+  display: block;
+}
+ol, ul, dl {
+  margin-top: 0;
+  list-style: none !important;
+  margin-bottom: 1rem;
 }
