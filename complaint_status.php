@@ -1,16 +1,7 @@
 <?php
 $id = $_GET['complaint_no'];
 
-// echo  $_SESSION['username'];
-$host = 'localhost';
-$user = 'root';
-$password = 'root';
-$dbname = 'projectmmit';
-
-$conn = new mysqli($host, $user, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include "db.php";
 
 $query = "SELECT * FROM `user_data` Where `complaint_number`=$id";
 $result = $conn->query($query);

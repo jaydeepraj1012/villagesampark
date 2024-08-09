@@ -1,13 +1,6 @@
 <?php
 session_start();
-$host = 'localhost'; // Database host
-$user = 'root'; // Database username
-$password = 'root'; // Database password
-$dbname = 'projectmmit'; // Database name
-
-// Create a connection
-$conn = mysqli_connect($host, $user, $password, $dbname);
-
+include "../db.php";
 // Check connection
 if (!$conn) {
     die(json_encode(['success' => false, 'message' => 'Database connection failed']));
