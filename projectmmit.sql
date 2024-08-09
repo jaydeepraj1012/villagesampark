@@ -1,0 +1,890 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Aug 09, 2024 at 08:38 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `projectmmit`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_users`
+--
+
+CREATE TABLE `admin_users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin_users`
+--
+
+INSERT INTO `admin_users` (`id`, `username`, `password`, `email`, `created_at`, `updated_at`) VALUES
+(1, 'root', 'root', 'admin@gmail.com', '2024-08-09 04:56:19', '2024-08-09 04:56:19');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `districts`
+--
+
+CREATE TABLE `districts` (
+  `district_id` int(11) NOT NULL,
+  `state_code` varchar(5) DEFAULT NULL,
+  `district_name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `districts`
+--
+
+INSERT INTO `districts` (`district_id`, `state_code`, `district_name`) VALUES
+(1, 'AP', 'Anantapur'),
+(2, 'AP', 'Chittoor'),
+(3, 'AP', 'East Godavari'),
+(4, 'AP', 'Guntur'),
+(5, 'AP', 'Krishna'),
+(6, 'AP', 'Kurnool'),
+(7, 'AP', 'Nellore'),
+(8, 'AP', 'Srikakulam'),
+(9, 'AP', 'Visakhapatnam'),
+(10, 'AP', 'West Godavari'),
+(11, 'AP', 'Y.S.R. Kadapa'),
+(12, 'AP', 'Anantapur'),
+(13, 'AP', 'Chittoor'),
+(14, 'AP', 'East Godavari'),
+(15, 'AP', 'Guntur'),
+(16, 'AP', 'Krishna'),
+(17, 'AP', 'Kurnool'),
+(18, 'AP', 'Nellore'),
+(19, 'AP', 'Srikakulam'),
+(20, 'AP', 'Visakhapatnam'),
+(21, 'AP', 'West Godavari'),
+(22, 'AP', 'Y.S.R. Kadapa'),
+(23, 'AP', 'Anantapur'),
+(24, 'AP', 'Chittoor'),
+(25, 'AP', 'East Godavari'),
+(26, 'AP', 'Guntur'),
+(27, 'AP', 'Krishna'),
+(28, 'AP', 'Kurnool'),
+(29, 'AP', 'Nellore'),
+(30, 'AP', 'Srikakulam'),
+(31, 'AP', 'Visakhapatnam'),
+(32, 'AP', 'West Godavari'),
+(33, 'AP', 'Y.S.R. Kadapa'),
+(34, 'AR', 'Anjaw'),
+(35, 'AR', 'Changlang'),
+(36, 'AR', 'East Kameng'),
+(37, 'AR', 'East Siang'),
+(38, 'AR', 'Kamle'),
+(39, 'AR', 'Kra Daadi'),
+(40, 'AR', 'Kurung Kumey'),
+(41, 'AR', 'Lohit'),
+(42, 'AR', 'Longding'),
+(43, 'AR', 'Lower Dibang Valley'),
+(44, 'AR', 'Lower Subansiri'),
+(45, 'AR', 'Namsai'),
+(46, 'AR', 'Papum Pare'),
+(47, 'AR', 'Siang'),
+(48, 'AR', 'Tawang'),
+(49, 'AR', 'Tirap'),
+(50, 'AR', 'Upper Dibang Valley'),
+(51, 'AR', 'Upper Siang'),
+(52, 'AR', 'Upper Subansiri'),
+(53, 'AR', 'West Kameng'),
+(54, 'AR', 'West Siang'),
+(55, 'AS', 'Baksa'),
+(56, 'AS', 'Barpeta'),
+(57, 'AS', 'Bongaigaon'),
+(58, 'AS', 'Cachar'),
+(59, 'AS', 'Chirang'),
+(60, 'AS', 'Darrang'),
+(61, 'AS', 'Dhemaji'),
+(62, 'AS', 'Dhubri'),
+(63, 'AS', 'Dibrugarh'),
+(64, 'AS', 'Goalpara'),
+(65, 'AS', 'Golaghat'),
+(66, 'AS', 'Hailakandi'),
+(67, 'AS', 'Jorhat'),
+(68, 'AS', 'Kamrup'),
+(69, 'AS', 'Kamrup Metropolitan'),
+(70, 'AS', 'Karbi Anglong'),
+(71, 'AS', 'Karimganj'),
+(72, 'AS', 'Kokrajhar'),
+(73, 'AS', 'Lakhimpur'),
+(74, 'AS', 'Majuli'),
+(75, 'AS', 'Morigaon'),
+(76, 'AS', 'Nagaon'),
+(77, 'AS', 'Nalbari'),
+(78, 'AS', 'Sivasagar'),
+(79, 'AS', 'Sonitpur'),
+(80, 'AS', 'Tinsukia'),
+(81, 'AS', 'Udalguri'),
+(82, 'AS', 'West Karbi Anglong'),
+(83, 'BR', 'Aurangabad'),
+(84, 'BR', 'Banka'),
+(85, 'BR', 'Begusarai'),
+(86, 'BR', 'Bhagalpur'),
+(87, 'BR', 'Buxar'),
+(88, 'BR', 'Darbhanga'),
+(89, 'BR', 'Gaya'),
+(90, 'BR', 'Jahanabad'),
+(91, 'BR', 'Kaimur'),
+(92, 'BR', 'Katihar'),
+(93, 'BR', 'Khagaria'),
+(94, 'BR', 'Kishanganj'),
+(95, 'BR', 'Madhubani'),
+(96, 'BR', 'Munger'),
+(97, 'BR', 'Muzaffarpur'),
+(98, 'BR', 'Nalanda'),
+(99, 'BR', 'Nawada'),
+(100, 'BR', 'Purnia'),
+(101, 'BR', 'Rohtas'),
+(102, 'BR', 'Saran'),
+(103, 'BR', 'Sheikhpura'),
+(104, 'BR', 'Sheohar'),
+(105, 'BR', 'Sitamarhi'),
+(106, 'BR', 'Supaul'),
+(107, 'BR', 'Vaishali'),
+(108, 'BR', 'West Champaran'),
+(109, 'CT', 'Balod'),
+(110, 'CT', 'Baloda Bazar'),
+(111, 'CT', 'Balrampur'),
+(112, 'CT', 'Bastar'),
+(113, 'CT', 'Bemetara'),
+(114, 'CT', 'Bilaspur'),
+(115, 'CT', 'Dantewada'),
+(116, 'CT', 'Dhamtari'),
+(117, 'CT', 'Durg'),
+(118, 'CT', 'Gariaband'),
+(119, 'CT', 'Janjgir-Champa'),
+(120, 'CT', 'Jashpur'),
+(121, 'CT', 'Korba'),
+(122, 'CT', 'Korea'),
+(123, 'CT', 'Mahasamund'),
+(124, 'CT', 'Mungeli'),
+(125, 'CT', 'Narayanpur'),
+(126, 'CT', 'Rajnandgaon'),
+(127, 'CT', 'Raipur'),
+(128, 'CT', 'Rajnandgaon'),
+(129, 'CT', 'Sukma'),
+(130, 'CT', 'Surajpur'),
+(131, 'CT', 'Surguja'),
+(132, 'GA', 'North Goa'),
+(133, 'GA', 'South Goa'),
+(134, 'GJ', 'Ahmedabad'),
+(135, 'GJ', 'Amreli'),
+(136, 'GJ', 'Anand'),
+(137, 'GJ', 'Aravalli'),
+(138, 'GJ', 'Banaskantha'),
+(139, 'GJ', 'Bharuch'),
+(140, 'GJ', 'Bhavnagar'),
+(141, 'GJ', 'Dahod'),
+(142, 'GJ', 'Dang'),
+(143, 'GJ', 'Gandhinagar'),
+(144, 'GJ', 'Gir Somnath'),
+(145, 'GJ', 'Jamnagar'),
+(146, 'GJ', 'Junagadh'),
+(147, 'GJ', 'Kutch'),
+(148, 'GJ', 'Mahisagar'),
+(149, 'GJ', 'Mehsana'),
+(150, 'GJ', 'Narmada'),
+(151, 'GJ', 'Navsari'),
+(152, 'GJ', 'Patan'),
+(153, 'GJ', 'Porbandar'),
+(154, 'GJ', 'Rajkot'),
+(155, 'GJ', 'Sabarkantha'),
+(156, 'GJ', 'Surat'),
+(157, 'GJ', 'Surendranagar'),
+(158, 'GJ', 'Tapi'),
+(159, 'GJ', 'Vadodara'),
+(160, 'GJ', 'Valsad'),
+(161, 'HR', 'Ambala'),
+(162, 'HR', 'Bhiwani'),
+(163, 'HR', 'Faridabad'),
+(164, 'HR', 'Fatehabad'),
+(165, 'HR', 'Gurugram'),
+(166, 'HR', 'Hisar'),
+(167, 'HR', 'Jhajjar'),
+(168, 'HR', 'Jind'),
+(169, 'HR', 'Kaithal'),
+(170, 'HR', 'Karnal'),
+(171, 'HR', 'Mahendragarh'),
+(172, 'HR', 'Mewat'),
+(173, 'HR', 'Palwal'),
+(174, 'HR', 'Panchkula'),
+(175, 'HR', 'Panipat'),
+(176, 'HR', 'Rewari'),
+(177, 'HR', 'Rohtak'),
+(178, 'HR', 'Sirsa'),
+(179, 'HR', 'Sonipat'),
+(180, 'HR', 'Yamunanagar'),
+(181, 'HP', 'Bilaspur'),
+(182, 'HP', 'Chamba'),
+(183, 'HP', 'Hamirpur'),
+(184, 'HP', 'Kangra'),
+(185, 'HP', 'Kinnaur'),
+(186, 'HP', 'Kullu'),
+(187, 'HP', 'Lahaul and Spiti'),
+(188, 'HP', 'Mandi'),
+(189, 'HP', 'Shimla'),
+(190, 'HP', 'Sirmaur'),
+(191, 'HP', 'Solan'),
+(192, 'HP', 'Una'),
+(193, 'JK', 'Anantnag'),
+(194, 'JK', 'Bandipora'),
+(195, 'JK', 'Baramulla'),
+(196, 'JK', 'Budgam'),
+(197, 'JK', 'Doda'),
+(198, 'JK', 'Ganderbal'),
+(199, 'JK', 'Jammu'),
+(200, 'JK', 'Kathua'),
+(201, 'JK', 'Kishtwar'),
+(202, 'JK', 'Poonch'),
+(203, 'JK', 'Rajouri'),
+(204, 'JK', 'Ramban'),
+(205, 'JK', 'Reasi'),
+(206, 'JK', 'Samba'),
+(207, 'JK', 'Shopian'),
+(208, 'JK', 'Srinagar'),
+(209, 'JK', 'Udhampur'),
+(210, 'JH', 'Bokaro'),
+(211, 'JH', 'Chatra'),
+(212, 'JH', 'Deoghar'),
+(213, 'JH', 'Dhanbad'),
+(214, 'JH', 'Dumka'),
+(215, 'JH', 'East Singhbhum'),
+(216, 'JH', 'Garhwa'),
+(217, 'JH', 'Giridih'),
+(218, 'JH', 'Godda'),
+(219, 'JH', 'Gumla'),
+(220, 'JH', 'Hazaribagh'),
+(221, 'JH', 'Jamtara'),
+(222, 'JH', 'Khunti'),
+(223, 'JH', 'Koderma'),
+(224, 'JH', 'Latehar'),
+(225, 'JH', 'Lohardaga'),
+(226, 'JH', 'Pakur'),
+(227, 'JH', 'Palamu'),
+(228, 'JH', 'Ramgarh'),
+(229, 'JH', 'Ranchi'),
+(230, 'JH', 'Sahebganj'),
+(231, 'JH', 'Seraikela-Kharsawan'),
+(232, 'JH', 'West Singhbhum'),
+(233, 'KA', 'Bagalkot'),
+(234, 'KA', 'Bangalore Rural'),
+(235, 'KA', 'Bangalore Urban'),
+(236, 'KA', 'Belagavi'),
+(237, 'KA', 'Ballari'),
+(238, 'KA', 'Bidar'),
+(239, 'KA', 'Chamarajanagar'),
+(240, 'KA', 'Chikballapur'),
+(241, 'KA', 'Chikkamagaluru'),
+(242, 'KA', 'Chitradurga'),
+(243, 'KA', 'Dakshina Kannada'),
+(244, 'KA', 'Davangere'),
+(245, 'KA', 'Dharwad'),
+(246, 'KA', 'Gadag'),
+(247, 'KA', 'Hassan'),
+(248, 'KA', 'Haveri'),
+(249, 'KA', 'Kodagu'),
+(250, 'KA', 'Kolar'),
+(251, 'KA', 'Koppal'),
+(252, 'KA', 'Mandya'),
+(253, 'KA', 'Mysuru'),
+(254, 'KA', 'Raichur'),
+(255, 'KA', 'Ramanagara'),
+(256, 'KA', 'Shimoga'),
+(257, 'KA', 'Tumkur'),
+(258, 'KA', 'Udupi'),
+(259, 'KA', 'Uttara Kannada'),
+(260, 'KA', 'Yadgir'),
+(261, 'KL', 'Alappuzha'),
+(262, 'KL', 'Ernakulam'),
+(263, 'KL', 'Idukki'),
+(264, 'KL', 'Kannur'),
+(265, 'KL', 'Kasaragod'),
+(266, 'KL', 'Kollam'),
+(267, 'KL', 'Kottayam'),
+(268, 'KL', 'Kozhikode'),
+(269, 'KL', 'Malappuram'),
+(270, 'KL', 'Palakkad'),
+(271, 'KL', 'Pathanamthitta'),
+(272, 'KL', 'Thrissur'),
+(273, 'KL', 'Wayanad'),
+(274, 'MP', 'Ashoknagar'),
+(275, 'MP', 'Balaghat'),
+(276, 'MP', 'Barwani'),
+(277, 'MP', 'Betul'),
+(278, 'MP', 'Bhind'),
+(279, 'MP', 'Bhopal'),
+(280, 'MP', 'Burhanpur'),
+(281, 'MP', 'Chhindwara'),
+(282, 'MP', 'Damoh'),
+(283, 'MP', 'Datia'),
+(284, 'MP', 'Dewas'),
+(285, 'MP', 'Dhar'),
+(286, 'MP', 'Dindori'),
+(287, 'MP', 'Guna'),
+(288, 'MP', 'Gwalior'),
+(289, 'MP', 'Harda'),
+(290, 'MP', 'Hoshangabad'),
+(291, 'MP', 'Jabalpur'),
+(292, 'MP', 'Jhabua'),
+(293, 'MP', 'Katni'),
+(294, 'MP', 'Khandwa'),
+(295, 'MP', 'Mandla'),
+(296, 'MP', 'Mandsaur'),
+(297, 'MP', 'Morena'),
+(298, 'MP', 'Narsinghpur'),
+(299, 'MP', 'Neemuch'),
+(300, 'MP', 'Panna'),
+(301, 'MP', 'Raisen'),
+(302, 'MP', 'Rajgarh'),
+(303, 'MP', 'Ratlam'),
+(304, 'MP', 'Rewa'),
+(305, 'MP', 'Sagar'),
+(306, 'MP', 'Satna'),
+(307, 'MP', 'Sehore'),
+(308, 'MP', 'Sewani'),
+(309, 'MP', 'Shahdol'),
+(310, 'MP', 'Shajapur'),
+(311, 'MP', 'Sheopur'),
+(312, 'MP', 'Shivpuri'),
+(313, 'MP', 'Sidhi'),
+(314, 'MP', 'Singrauli'),
+(315, 'MP', 'Tikamgarh'),
+(316, 'MP', 'Ujjain'),
+(317, 'MP', 'Umaria'),
+(318, 'MP', 'Vidisha'),
+(319, 'MH', 'Ahmednagar'),
+(320, 'MH', 'Akola'),
+(321, 'MH', 'Amravati'),
+(322, 'MH', 'Aurangabad'),
+(323, 'MH', 'Beed'),
+(324, 'MH', 'Bhandara'),
+(325, 'MH', 'Buldhana'),
+(326, 'MH', 'Chandrapur'),
+(327, 'MH', 'Dhule'),
+(328, 'MH', 'Gadchiroli'),
+(329, 'MH', 'Gondia'),
+(330, 'MH', 'Hingoli'),
+(331, 'MH', 'Jalgaon'),
+(332, 'MH', 'Jalna'),
+(333, 'MH', 'Kolhapur'),
+(334, 'MH', 'Latur'),
+(335, 'MH', 'Mumbai City'),
+(336, 'MH', 'Mumbai Suburban'),
+(337, 'MH', 'Nagpur'),
+(338, 'MH', 'Nanded'),
+(339, 'MH', 'Nandurbar'),
+(340, 'MH', 'Nashik'),
+(341, 'MH', 'Osmanabad'),
+(342, 'MH', 'Palghar'),
+(343, 'MH', 'Parbhani'),
+(344, 'MH', 'Pune'),
+(345, 'MH', 'Raigad'),
+(346, 'MH', 'Ratnagiri'),
+(347, 'MH', 'Satara'),
+(348, 'MH', 'Sindhudurg'),
+(349, 'MH', 'Solapur'),
+(350, 'MH', 'Thane'),
+(351, 'MH', 'Wardha'),
+(352, 'MH', 'Washim'),
+(353, 'MH', 'Yavatmal'),
+(354, 'MN', 'Bishnupur'),
+(355, 'MN', 'Churachandpur'),
+(356, 'MN', 'Chandel'),
+(357, 'MN', 'Imphal East'),
+(358, 'MN', 'Imphal West'),
+(359, 'MN', 'Jiribam'),
+(360, 'MN', 'Kangpokpi'),
+(361, 'MN', 'Senapati'),
+(362, 'MN', 'Tamenglong'),
+(363, 'MN', 'Ukhrul'),
+(364, 'ML', 'East Garo Hills'),
+(365, 'ML', 'East Jaintia Hills'),
+(366, 'ML', 'East Khasi Hills'),
+(367, 'ML', 'North Garo Hills'),
+(368, 'ML', 'Ri-Bhoi'),
+(369, 'ML', 'South Garo Hills'),
+(370, 'ML', 'South West Garo Hills'),
+(371, 'ML', 'South West Khasi Hills'),
+(372, 'ML', 'West Garo Hills'),
+(373, 'ML', 'West Jaintia Hills'),
+(374, 'ML', 'West Khasi Hills'),
+(375, 'MZ', 'Aizawl'),
+(376, 'MZ', 'Champhai'),
+(377, 'MZ', 'Kolasib'),
+(378, 'MZ', 'Lawngtlai'),
+(379, 'MZ', 'Lunglei'),
+(380, 'MZ', 'Mamit'),
+(381, 'MZ', 'Serchhip'),
+(382, 'NL', 'Dimapur'),
+(383, 'NL', 'Kiphire'),
+(384, 'NL', 'Kohima'),
+(385, 'NL', 'Longleng'),
+(386, 'NL', 'Mokokchung'),
+(387, 'NL', 'Mon'),
+(388, 'NL', 'Phek'),
+(389, 'NL', 'Tuensang'),
+(390, 'NL', 'Wokha'),
+(391, 'NL', 'Zunheboto'),
+(392, 'OR', 'Angul'),
+(393, 'OR', 'Balangir'),
+(394, 'OR', 'Balasore'),
+(395, 'OR', 'Bargarh'),
+(396, 'OR', 'Baripada'),
+(397, 'OR', 'Bhadrak'),
+(398, 'OR', 'Boudh'),
+(399, 'OR', 'Cuttack'),
+(400, 'OR', 'Debagarh'),
+(401, 'OR', 'Dhenkanal'),
+(402, 'OR', 'Gajapati'),
+(403, 'OR', 'Ganjam'),
+(404, 'OR', 'Jagatsinghpur'),
+(405, 'OR', 'Jajpur'),
+(406, 'OR', 'Jeypore'),
+(407, 'OR', 'Kalahandi'),
+(408, 'OR', 'Kandhamal'),
+(409, 'OR', 'Kendrapara'),
+(410, 'OR', 'Kendujhar'),
+(411, 'OR', 'Khurda'),
+(412, 'OR', 'Koraput'),
+(413, 'OR', 'Malkangiri'),
+(414, 'OR', 'Nabarangpur'),
+(415, 'OR', 'Nayagarh'),
+(416, 'OR', 'Nuapada'),
+(417, 'OR', 'Rayagada'),
+(418, 'OR', 'Sambalpur'),
+(419, 'OR', 'Subarnapur'),
+(420, 'OR', 'Sundergarh'),
+(421, 'PB', 'Amritsar'),
+(422, 'PB', 'Barnala'),
+(423, 'PB', 'Bathinda'),
+(424, 'PB', 'Fatehgarh Sahib'),
+(425, 'PB', 'Ferozepur'),
+(426, 'PB', 'Gurdaspur'),
+(427, 'PB', 'Hoshiarpur'),
+(428, 'PB', 'Jalandhar'),
+(429, 'PB', 'Kapurthala'),
+(430, 'PB', 'Ludhiana'),
+(431, 'PB', 'Mansa'),
+(432, 'PB', 'Moga'),
+(433, 'PB', 'Mohali'),
+(434, 'PB', 'Patiala'),
+(435, 'PB', 'Rupnagar'),
+(436, 'PB', 'Sangrur'),
+(437, 'PB', 'SAS Nagar'),
+(438, 'PB', 'Shahid Bhagat Singh Nagar'),
+(439, 'PB', 'Tarn Taran'),
+(440, 'RJ', 'Ajmer'),
+(441, 'RJ', 'Alwar'),
+(442, 'RJ', 'Banswara'),
+(443, 'RJ', 'Baran'),
+(444, 'RJ', 'Barmer'),
+(445, 'RJ', 'Bharatpur'),
+(446, 'RJ', 'Bhilwara'),
+(447, 'RJ', 'Bikaner'),
+(448, 'RJ', 'Bundi'),
+(449, 'RJ', 'Chittorgarh'),
+(450, 'RJ', 'Churu'),
+(451, 'RJ', 'Dausa'),
+(452, 'RJ', 'Dholpur'),
+(453, 'RJ', 'Dungarpur'),
+(454, 'RJ', 'Hanumangarh'),
+(455, 'RJ', 'Jaipur'),
+(456, 'RJ', 'Jaisalmer'),
+(457, 'RJ', 'Jalore'),
+(458, 'RJ', 'Jhalawar'),
+(459, 'RJ', 'Jhunjhunu'),
+(460, 'RJ', 'Jodhpur'),
+(461, 'RJ', 'Karauli'),
+(462, 'RJ', 'Kota'),
+(463, 'RJ', 'Nagaur'),
+(464, 'RJ', 'Pali'),
+(465, 'RJ', 'Rajasthan'),
+(466, 'RJ', 'Sikar'),
+(467, 'RJ', 'Sirohi'),
+(468, 'RJ', 'Sri Ganganagar'),
+(469, 'RJ', 'Tonk'),
+(470, 'RJ', 'Udaipur'),
+(471, 'SK', 'East Sikkim'),
+(472, 'SK', 'North Sikkim'),
+(473, 'SK', 'South Sikkim'),
+(474, 'SK', 'West Sikkim'),
+(475, 'TN', 'Ariyalur'),
+(476, 'TN', 'Chengalpattu'),
+(477, 'TN', 'Chennai'),
+(478, 'TN', 'Coimbatore'),
+(479, 'TN', 'Cuddalore'),
+(480, 'TN', 'Dharmapuri'),
+(481, 'TN', 'Dindigul'),
+(482, 'TN', 'Kallakurichi'),
+(483, 'TN', 'Kancheepuram'),
+(484, 'TN', 'Kanyakumari'),
+(485, 'TN', 'Karur'),
+(486, 'TN', 'Krishnagiri'),
+(487, 'TN', 'Madurai'),
+(488, 'TN', 'Nagapattinam'),
+(489, 'TN', 'Namakkal'),
+(490, 'TN', 'Nilgiris'),
+(491, 'TN', 'Perambalur'),
+(492, 'TN', 'Pudukkottai'),
+(493, 'TN', 'Ramanathapuram'),
+(494, 'TN', 'Ranipet'),
+(495, 'TN', 'Salem'),
+(496, 'TN', 'Sivaganga'),
+(497, 'TN', 'Tenkasi'),
+(498, 'TN', 'Thanjavur'),
+(499, 'TN', 'Theni'),
+(500, 'TN', 'Thoothukudi'),
+(501, 'TN', 'Tiruchirappalli'),
+(502, 'TN', 'Tirunelveli'),
+(503, 'TN', 'Tirupathur'),
+(504, 'TN', 'Tiruppur'),
+(505, 'TN', 'Tiruvallur'),
+(506, 'TN', 'Tiruvannamalai'),
+(507, 'TN', 'Vellore'),
+(508, 'TN', 'Viluppuram'),
+(509, 'TN', 'Virudhunagar'),
+(510, 'TG', 'Adilabad'),
+(511, 'TG', 'Bhadradri Kothagudem'),
+(512, 'TG', 'Hyderabad'),
+(513, 'TG', 'Jagtial'),
+(514, 'TG', 'Jangaon'),
+(515, 'TG', 'Jayashankar Bhupalpally'),
+(516, 'TG', 'Jogulamba Gadwal'),
+(517, 'TG', 'Kamareddy'),
+(518, 'TG', 'Karimnagar'),
+(519, 'TG', 'Khammam'),
+(520, 'TG', 'Mahabubabad'),
+(521, 'TG', 'Mahabubnagar'),
+(522, 'TG', 'Mancherial'),
+(523, 'TG', 'Medak'),
+(524, 'TG', 'Medchal-Malkajgiri'),
+(525, 'TG', 'Nalgonda'),
+(526, 'TG', 'Nirmal'),
+(527, 'TG', 'Nizamabad'),
+(528, 'TG', 'Peddapalli'),
+(529, 'TG', 'Rajanna Sircilla'),
+(530, 'TG', 'Rangareddy'),
+(531, 'TG', 'Sangareddy'),
+(532, 'TG', 'Warangal Rural'),
+(533, 'TG', 'Warangal Urban'),
+(534, 'TG', 'Yadadri Bhuvanagiri'),
+(535, 'TR', 'Dhalai'),
+(536, 'TR', 'Gomati'),
+(537, 'TR', 'Khowai'),
+(538, 'TR', 'North Tripura'),
+(539, 'TR', 'Sepahijala'),
+(540, 'TR', 'South Tripura'),
+(541, 'TR', 'Unakoti'),
+(542, 'TR', 'West Tripura'),
+(543, 'UP', 'Agra'),
+(544, 'UP', 'Aligarh'),
+(545, 'UP', 'Allahabad'),
+(546, 'UP', 'Ambedkar Nagar'),
+(547, 'UP', 'Auraiya'),
+(548, 'UP', 'Azamgarh'),
+(549, 'UP', 'Badaun'),
+(550, 'UP', 'Basti'),
+(551, 'UP', 'Bathinda'),
+(552, 'UP', 'Bijnor'),
+(553, 'UP', 'Budaun'),
+(554, 'UP', 'Bulandshahr'),
+(555, 'UP', 'Chandauli'),
+(556, 'UP', 'Chitrakoot'),
+(557, 'UP', 'Deoria'),
+(558, 'UP', 'Etah'),
+(559, 'UP', 'Etawah'),
+(560, 'UP', 'Faizabad'),
+(561, 'UP', 'Firozabad'),
+(562, 'UP', 'Gautam Buddha Nagar'),
+(563, 'UP', 'Ghaziabad'),
+(564, 'UP', 'Ghazipur'),
+(565, 'UP', 'Gonda'),
+(566, 'UP', 'Gorakhpur'),
+(567, 'UP', 'Hamirpur'),
+(568, 'UP', 'Hapur'),
+(569, 'UP', 'Hardoi'),
+(570, 'UP', 'Hathras'),
+(571, 'UP', 'Jalaun'),
+(572, 'UP', 'Jaunpur'),
+(573, 'UP', 'Jhansi'),
+(574, 'UP', 'Kannauj'),
+(575, 'UP', 'Kanpur Dehat'),
+(576, 'UP', 'Kanpur Nagar'),
+(577, 'UP', 'Kushinagar'),
+(578, 'UP', 'Lakhimpur Kheri'),
+(579, 'UP', 'Lalitpur'),
+(580, 'UP', 'Lucknow'),
+(581, 'UP', 'Mau'),
+(582, 'UP', 'Meerut'),
+(583, 'UP', 'Mirzapur'),
+(584, 'UP', 'Moradabad'),
+(585, 'UP', 'Mainpuri'),
+(586, 'UP', 'Mathura'),
+(587, 'UP', 'Muzaffarnagar'),
+(588, 'UP', 'Pilibhit'),
+(589, 'UP', 'Pratapgarh'),
+(590, 'UP', 'Raebareli'),
+(591, 'UP', 'Rampur'),
+(592, 'UP', 'Rae Bareli'),
+(593, 'UP', 'Saharanpur'),
+(594, 'UP', 'Sambhal'),
+(595, 'UP', 'Sant Kabir Nagar'),
+(596, 'UP', 'Sant Ravidas Nagar'),
+(597, 'UP', 'Shahjahanpur'),
+(598, 'UP', 'Shamli'),
+(599, 'UP', 'Siddharthnagar'),
+(600, 'UP', 'Sitapur'),
+(601, 'UP', 'Sonbhadra'),
+(602, 'UP', 'Unnao'),
+(603, 'UP', 'Varanasi'),
+(604, 'UT', 'Almora'),
+(605, 'UT', 'Bageshwar'),
+(606, 'UT', 'Bharatpur'),
+(607, 'UT', 'Chamoli'),
+(608, 'UT', 'Champawat'),
+(609, 'UT', 'Dehradun'),
+(610, 'UT', 'Haridwar'),
+(611, 'UT', 'Nainital'),
+(612, 'UT', 'Pauri Garhwal'),
+(613, 'UT', 'Pithoragarh'),
+(614, 'UT', 'Rudraprayag'),
+(615, 'UT', 'Tehri Garhwal'),
+(616, 'UT', 'Udham Singh Nagar'),
+(617, 'UT', 'Uttarkashi'),
+(618, 'WB', 'Alipurduar'),
+(619, 'WB', 'Bankura'),
+(620, 'WB', 'Birbhum'),
+(621, 'WB', 'Burdwan'),
+(622, 'WB', 'Cooch Behar'),
+(623, 'WB', 'Dakshin Dinajpur'),
+(624, 'WB', 'Darjeeling'),
+(625, 'WB', 'Hooghly'),
+(626, 'WB', 'Howrah'),
+(627, 'WB', 'Jalpaiguri'),
+(628, 'WB', 'Jhargram'),
+(629, 'WB', 'Kolkata'),
+(630, 'WB', 'Malda'),
+(631, 'WB', 'Murshidabad'),
+(632, 'WB', 'Nadia'),
+(633, 'WB', 'North 24 Parganas'),
+(634, 'WB', 'Paschim Bardhaman'),
+(635, 'WB', 'Paschim Medinipur'),
+(636, 'WB', 'Purba Bardhaman'),
+(637, 'WB', 'Purba Medinipur'),
+(638, 'WB', 'Purulia'),
+(639, 'WB', 'South 24 Parganas'),
+(640, 'WB', 'Uttar Dinajpur');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `states`
+--
+
+CREATE TABLE `states` (
+  `state_code` varchar(5) NOT NULL,
+  `state_name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `states`
+--
+
+INSERT INTO `states` (`state_code`, `state_name`) VALUES
+('AN', 'Andaman and Nicobar Islands'),
+('AP', 'Andhra Pradesh'),
+('AR', 'Arunachal Pradesh'),
+('AS', 'Assam'),
+('BR', 'Bihar'),
+('CH', 'Chandigarh'),
+('CT', 'Chhattisgarh'),
+('DH', 'Dadra and Nagar Haveli and Daman and Diu'),
+('DL', 'Delhi'),
+('GA', 'Goa'),
+('GJ', 'Gujarat'),
+('HP', 'Himachal Pradesh'),
+('HR', 'Haryana'),
+('JH', 'Jharkhand'),
+('JK', 'Jammu and Kashmir'),
+('KA', 'Karnataka'),
+('KL', 'Kerala'),
+('LD', 'Lakshadweep'),
+('MH', 'Maharashtra'),
+('ML', 'Meghalaya'),
+('MN', 'Manipur'),
+('MP', 'Madhya Pradesh'),
+('MZ', 'Mizoram'),
+('NL', 'Nagaland'),
+('OR', 'Odisha'),
+('PB', 'Punjab'),
+('PY', 'Puducherry'),
+('RJ', 'Rajasthan'),
+('SK', 'Sikkim'),
+('TG', 'Telangana'),
+('TN', 'Tamil Nadu'),
+('TR', 'Tripura'),
+('UP', 'Uttar Pradesh'),
+('UT', 'Uttarakhand'),
+('WB', 'West Bengal');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_data`
+--
+
+CREATE TABLE `user_data` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `address_line` text DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `district` varchar(50) DEFAULT NULL,
+  `state` varchar(50) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `pin_code` varchar(10) DEFAULT NULL,
+  `summary` text DEFAULT NULL,
+  `mobile` varchar(15) DEFAULT NULL,
+  `image_path` varchar(255) DEFAULT NULL,
+  `complaint_number` bigint(10) NOT NULL,
+  `status` varchar(20) NOT NULL DEFAULT 'Pending'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_data`
+--
+
+INSERT INTO `user_data` (`id`, `name`, `dob`, `address_line`, `city`, `district`, `state`, `email`, `pin_code`, `summary`, `mobile`, `image_path`, `complaint_number`, `status`) VALUES
+(1, 'JAYDEEP', '0000-00-00', 'Mainath agra Road aligarh', 'ALIGARH', '48242472937924', 'Uttar Pradesh', '', '202002', '3842384823874', '0639707571', 'uploads/photo_2024-08-02_07-52-54_11zon.jpg', 87878, 'resolved'),
+(2, 'JAYDEEP', '0000-00-00', 'Mainath agra Road aligarh', 'ALIGARH', 'nggh', 'Uttar Pradesh', '', '202002', 'jgjguy', '6397075715', 'uploads/photo_2024-08-02_07-52-54_11zon.jpg', 0, 'Pending'),
+(3, 'JAYDEEP', '2024-08-13', 'Mainath agra Road aligarh', 'ALIGARH', 'jhug', 'Uttar Pradesh', '', '202002', 'bvh', '6397075715', 'uploads/photo_2024-08-02_07-52-54_11zon.jpg', 0, 'Pending'),
+(4, 'JAYDEEP s djw', '2024-08-19', 'Mainath agra Road aligarh', 'ALIGARH', 'wmdbjkwjd', 'Uttar Pradesh', '', '202002', 'wsnbdjwd', '0639707571', 'uploads/0770834001722565950photo20240802075254.jpg', 6920638811, 'Pending'),
+(5, 'JAYDEEP', '2024-08-28', 'Mainath agra Road aligarh', 'ALIGARH', 'hadhasjd', 'Uttar Pradesh', '', '202002', 'snmdjqw', '6397075715', 'uploads/0770834001722565950photo20240802075254.jpg', 5538930331, 'Pending'),
+(6, 'qwqjdwd', '2024-08-20', 'jhwdgjqd', 'd mwdjq', 'skjdw', 'djwgcew', '', '567899', 'nmwdwh', '7642412753', 'uploads/0770834001722565950photo20240802075254.jpg', 1033949681, 'Pending'),
+(7, 'jaydeep raj1012', '2024-08-13', 'Mainath', 'Aligarh', 'amxja', 'Uttar Pradesh', '', '202001', 'dshgw', '2782146123', 'uploads/0770834001722565950photo20240802075254.jpg', 2457785071, 'Pending'),
+(8, 'JAYDEEP', '2024-08-20', 'Mainath agra Road aligarh', 'ALIGARH', 'asmxah', 'Uttar Pradesh', '', '202002', 'sbcshxc', '0639707571', 'uploads/0770834001722565950photo20240802075254.jpg', 9212535405, 'Pending'),
+(9, 'JAYDEEP', '2024-08-20', 'Mainath agra Road aligarh', 'ALIGARH', 'sandvhs', 'Uttar Pradesh', '', '202002', 'wsnhdhw', '0639707571', 'uploads/photo_2024-08-02_07-52-54_11zon.jpg', 3944862513, 'Pending'),
+(10, 'JAYDEEP', '2024-08-21', 'Mainath agra Road aligarh', 'ALIGARH', '4735274', 'Uttar Pradesh', '', '202002', '2u432y4t32', '6397075715', 'uploads/0770834001722565950photo20240802075254.jpg', 1574011882, 'Pending'),
+(11, 'JAYDEEP', '2024-08-27', 'Mainath agra Road aligarh', 'ALIGARH', '3223', 'Uttar Pradesh', '', '202002', '232423', '0639707571', 'uploads/0770834001722565950photo20240802075254.jpg', 9814326640, 'Pending'),
+(12, 'JAYDEEP', '2024-08-15', 'Mainath agra Road aligarh', 'ALIGARH', '3i4y37r3', 'Uttar Pradesh', '', '202002', '748324623', '0639707571', 'uploads/0770834001722565950photo20240802075254.jpg', 5214312257, 'resolved'),
+(13, 'JAYDEEP', '2024-08-14', 'Mainath agra Road aligarh', 'ALIGARH', 'shfdhas', 'Uttar Pradesh', '', '202002', 'sjdhs', '0639075715', 'uploads/bhyhggh-2.png', 3805360831, 'closed');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- Indexes for table `admin_users`
+--
+ALTER TABLE `admin_users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Indexes for table `districts`
+--
+ALTER TABLE `districts`
+  ADD PRIMARY KEY (`district_id`),
+  ADD KEY `state_code` (`state_code`);
+
+--
+-- Indexes for table `states`
+--
+ALTER TABLE `states`
+  ADD PRIMARY KEY (`state_code`);
+
+--
+-- Indexes for table `user_data`
+--
+ALTER TABLE `user_data`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `admin_users`
+--
+ALTER TABLE `admin_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `districts`
+--
+ALTER TABLE `districts`
+  MODIFY `district_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=641;
+
+--
+-- AUTO_INCREMENT for table `user_data`
+--
+ALTER TABLE `user_data`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `districts`
+--
+ALTER TABLE `districts`
+  ADD CONSTRAINT `districts_ibfk_1` FOREIGN KEY (`state_code`) REFERENCES `states` (`state_code`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
